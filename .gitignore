@@ -1,3 +1,3 @@
 data/movies.csv
-dvc-remote
+dev-remote
 dvc remote add -d local-remote dev-remote
