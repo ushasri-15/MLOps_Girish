@@ -1,6 +1,4 @@
 [core]
-    remote = new-remote
+    remote = local-remote
 ['remote "local-remote"']
-    url = ../dev-remote
-['remote "new-remote"']
     url = ../dev-remote
