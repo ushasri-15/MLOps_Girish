@@ -7,6 +7,7 @@ from sklearn.metrics import mean_squared_error, r2_score
 import joblib
 import mlflow
 import mlflow.sklearn
+import joblib
 data = load_iris()
 
 X = pd.DataFrame(data.data,columns=data.feature_names)
@@ -34,4 +35,6 @@ with mlflow.start_run():
     mlflow.log_metric("r2",r2)
 
     mlflow.sklearn.log_model(model,"rf-default")
+    joblib.dump(model,'model/rf-default.joblib')
+    mlflow.log_artifact('model/rf-default.joblib')
 
