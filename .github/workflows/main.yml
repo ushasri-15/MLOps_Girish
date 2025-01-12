@@ -45,5 +45,5 @@ jobs:
       - name: Download Artifact
         uses: actions/download-artifact@v4
         with:
-          name: iris_rf_model
+          name: iris_artifact
           path: /opt/iris_rf_model.dockerbuild
