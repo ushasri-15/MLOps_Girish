@@ -29,3 +29,15 @@ jobs:
 
       - name: Deploy Model
         run: python session3/train.py
+
+      - name: Build Docker Image
+        run: docker build -t Iris_rf_model
+        
+      - name: Save Docker image
+        run: docker save Iris_rf_model > Iris_rf_model.tar
+
+      - name: Upload Docker image artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: my-app-docker-image
+          path: Iris_rf_model.tar
