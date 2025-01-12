@@ -33,17 +33,14 @@ jobs:
       - name: Build Docker Image
         run: docker build -t iris_rf_model session3
         
-      - name: Save Docker image
-        run: docker save iris_rf_model > iris_rf_model.tar
-
       - name: 'Upload Artifact'
         uses: actions/upload-artifact@v4
         with:
           name: iris_artifact
-          path: iris_rf_model.tar  
+          path: session3/iris_rf_model 
       
       - name: Download Artifact
         uses: actions/download-artifact@v4
         with:
           name: iris_artifact
-          path: /opt/iris_rf_model.tar
+          path: /opt/iris_rf_model
