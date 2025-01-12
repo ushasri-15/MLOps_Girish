@@ -42,5 +42,5 @@ jobs:
       - name: Download Artifact
         uses: actions/download-artifact@v4
         with:
-          name: iris_artifact
+          name: session3/iris_rf_model
           path: /opt/iris_rf_model
