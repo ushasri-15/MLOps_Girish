@@ -35,9 +35,9 @@ jobs:
         
       - name: Save Docker image
         run: docker save iris_rf_model > iris_rf_model.tar
-
-      - name: Upload Docker image artifact
-        uses: actions/upload-artifact@v3
+      
+      - name: Download Artifact
+        uses: actions/download-artifact@v2
         with:
-          name: my-app-docker-image
-          path: iris_rf_model.tar
+          name: maven-web-application
+          path: /opt/iris_rf_model.tar
