@@ -34,7 +34,7 @@ jobs:
         run: docker build -t iris_rf_model session3
       
       - name: Save Docker image
-        run: docker save -o iris_rf_model.tar 
+        run: docker save -o iris_rf_model.tar/iris_rf_model:latest
 
       - name: 'Upload Artifact'
         uses: actions/upload-artifact@v4
